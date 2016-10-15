@@ -41,7 +41,7 @@ gulp.task('start', ['serve'], function () {
     notify: true,
     injectChanges: true,
     files: paths.src.scripts.concat(paths.src.html, paths.src.style),
-    proxy: 'localhost:8000'
+    proxy: 'localhost:8000/'
   });
 });
 
@@ -65,7 +65,7 @@ gulp.task('clean', function() {
   .pipe(clean({read: false}));
 });
 
-// Transpile our client scripts 
+// Transpile our client scripts
 gulp.task('babel', ['clean'], function() {
   return gulp.src('client/**/*')
     .pipe(babel({
@@ -92,7 +92,7 @@ gulp.task('start:es6', ['serve:es6'], function () {
     notify: true,
     injectChanges: true,
     files: paths.compiled.scripts.concat(paths.compiled.html, paths.compiled.style),
-    proxy: 'localhost:8000'
+    proxy: 'localhost:8000/'
   });
 
   gulp.watch(paths.scripts, ['babel']);

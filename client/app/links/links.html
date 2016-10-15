@@ -1,6 +1,12 @@
 <div id='container' ng-controller="LinksController">
-  <h1>Shortened Links</h1>
+  <a href="#/links"><strong>All Links | </strong></a>
+  <a href="#/shorten"><strong>Shorten... | </strong></a>
+  <a href="#/signout" ng-click='Auth.signout'><strong>Sign Out</strong></a>
+  <h1>All Links</h1>
   <div ng-repeat="link in data.links">
-    <p>link.url</p>
+    <a ng-href='{{ link.url }}'>
+      <h3>{{ link.title }}</h3>
+      <p>{{ link.baseUrl + '/' + link.code }}</p>
+    </a>
   </div>
 </div>

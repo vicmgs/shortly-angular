@@ -1,9 +1,10 @@
-<div id='container'>
-  <h1>Shorten...</h1>
-  <form name="shortenForm">
-    <input type='text' ng-model='link'>
-    <button ng-submit='addLink(link)'>Shorten</button>
+<div id='container' ng-controller:'ShortenController'>
+  <a href="#/links"><strong>All Links | </strong></a>
+  <a href="#/shorten"><strong>Shorten... | </strong></a>
+  <a href="#/signout" ng-click='Auth.signout'><strong>Sign Out</strong></a>
+  <h1>Shorten this</h1>
+  <form name="shortenForm" ng-submit='addLink(link)'>
+    <input type='text' ng-model='link.url'>
+    <button>Shorten</button>
   </form>
 </div>
-
-
