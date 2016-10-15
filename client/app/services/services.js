@@ -21,6 +21,15 @@ angular.module('shortly.services', [])
       return res;
     });
   };
+  var goTo = function (one) {
+    return $http({
+      method: 'GET',
+      url: one.code
+    })
+    .then(function (res) {
+      return res;
+    });
+  };
 
   return {
     getAll: getAll,

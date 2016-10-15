@@ -3,10 +3,10 @@
   <a href="#/shorten"><strong>Shorten... | </strong></a>
   <a ng-click='signout()'><strong>Sign Out</strong></a>
   <h1>All Links</h1>
-  <div ng-repeat="link in data.links">
+  <div ng-repeat="link in data.links | orderBy: 'view'">
     <a ng-href='{{ link.url }}'>
       <h3>{{ link.title }}</h3>
-      <p>{{ link.baseUrl + '/' + link.code }}</p>
+      <p>{{ link.baseUrl + '/' + link.code + ' | ' + link.visits + ' Views' }}</p>
     </a>
   </div>
 </div>
