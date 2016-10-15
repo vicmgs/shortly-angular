@@ -4,7 +4,10 @@
 angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
-  $scope.user = {};
+  $scope.user = {username:'', password:''};
+
+  $scope.validUser = '';
+  $scope.badCreds = '';
 
   $scope.signin = function () {
     Auth.signin($scope.user)
@@ -13,7 +16,8 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
-        console.error(error);
+        $scope.badCreds = 'Invalid Username Password Combination.';
+        console.log(error);
       });
   };
 
@@ -24,6 +28,7 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
+        $scope.validUser = 'User Already Exists';
         console.error(error);
       });
   };

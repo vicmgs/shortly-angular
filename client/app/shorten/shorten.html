@@ -4,7 +4,9 @@
   <a ng-click='signout()'><strong>Sign Out</strong></a>
   <h1>Shorten this</h1>
   <form name="shortenForm" ng-submit='addLink(link)'>
-    <input type='text' ng-model='link.url'>
+    <input name='linkInput' type='url' ng-model='link.url'>
     <button>Shorten</button>
   </form>
+  <p>The input's state is:</p>
+  <h1>{{shortenForm.linkInput.$valid}}</h1>
 </div>
