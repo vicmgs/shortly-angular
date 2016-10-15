@@ -1,7 +1,7 @@
 <div id='container' ng-controller:'ShortenController'>
   <a href="#/links"><strong>All Links | </strong></a>
   <a href="#/shorten"><strong>Shorten... | </strong></a>
-  <a href="#/signout" ng-click='Auth.signout'><strong>Sign Out</strong></a>
+  <a ng-click='signout()'><strong>Sign Out</strong></a>
   <h1>Shorten this</h1>
   <form name="shortenForm" ng-submit='addLink(link)'>
     <input type='text' ng-model='link.url'>
