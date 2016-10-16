@@ -1,9 +1,14 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth, $location) {
   // Your code here
 
   $scope.data = {};
+
+  $scope.logout = function () {
+    Auth.signout();
+    $location.path('/');
+  };
 
   var initializeLinks = function () {
     Links.getAll()
@@ -16,4 +21,4 @@ angular.module('shortly.links', [])
   };
 
   initializeLinks();
-  });
+});
