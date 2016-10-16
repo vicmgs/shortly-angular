@@ -7,7 +7,7 @@ angular.module('shortly.links', [])
 
   $scope.logout = function () {
     Auth.signout();
-    $location.path('/');
+    // $location.path('/');
   };
 
   var initializeLinks = function () {

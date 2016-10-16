@@ -6,7 +6,7 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
   $scope.logout = function () {
     Auth.signout();
-    $location.path('/');
+    // $location.path('/');
   };
   $scope.addLink = function () {
     $scope.loading = true;
